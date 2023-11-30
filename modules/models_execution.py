@@ -3,7 +3,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 import pandas as pd
-from gurobipy import Model, GRB
+try:
+    from gurobipy import Model, GRB
+except ImportError:
+    print("Gurobi is not installed or configured properly.")
 
 def classificationModel(labelled_df, seed):
 
